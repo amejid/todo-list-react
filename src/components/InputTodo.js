@@ -1,9 +1,12 @@
 import { PureComponent } from 'react';
 
 class InputTodo extends PureComponent {
-  state = {
-    title: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+    };
+  }
 
   onChange = (e) => {
     this.setState({
