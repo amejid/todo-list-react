@@ -41,14 +41,11 @@ const TodoContainer = () => {
   };
 
   const setUpdate = (updatedTitle, id) => {
-    setTodos(
-      todos.map((todo) => {
-        if (todo.id === id) {
-          todo.title = updatedTitle;
-        }
-        return todo;
-      }),
-    );
+    const newTodos = todos.slice();
+    const toUpdate = newTodos.find((todo) => todo.id === id);
+    toUpdate.title = updatedTitle;
+
+    setTodos(newTodos);
   };
 
   useEffect(() => {
